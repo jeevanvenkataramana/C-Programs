@@ -1,0 +1,20 @@
+02:32:11 **** Incremental Build of configuration Debug for project binary_array_tree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o binary_array_tree.o "..\\binary_array_tree.cpp" 
+..\binary_array_tree.cpp: In function 'std::__cxx11::string solution(std::vector<int>)':
+..\binary_array_tree.cpp:11:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=1; i<arr.size(); i++)
+               ~^~~~~~~~~~~
+..\binary_array_tree.cpp:14:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int j=i; (j<arr.size() && j<(i+pow(2,index))); j++)
+                 ~^~~~~~~~~~~
+..\binary_array_tree.cpp:13:7: warning: unused variable 'z' [-Wunused-variable]
+   int z=0;
+       ^
+..\binary_array_tree.cpp:9:25: warning: unused variable 'right_sum' [-Wunused-variable]
+  int left_sum = arr[0], right_sum=arr[0];
+                         ^~~~~~~~~
+g++ -o binary_array_tree.exe binary_array_tree.o 
+
+02:32:14 Build Finished (took 2s.250ms)
+

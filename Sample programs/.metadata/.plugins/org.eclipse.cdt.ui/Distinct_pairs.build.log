@@ -1,0 +1,6 @@
+02:32:48 **** Incremental Build of configuration Debug for project Distinct_pairs ****
+Info: Internal Builder is used for build
+g++ -o Distinct_pairs.exe DistinctMain.o 
+
+02:32:49 Build Finished (took 1s.623ms)
+

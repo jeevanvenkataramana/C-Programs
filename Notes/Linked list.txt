@@ -1,0 +1,316 @@
+
+Insert node at the tail 
+
+
+
+/*
+  Insert Node at the end of a linked list 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  struct Node
+  {
+     int data;
+     struct Node *next;
+  }
+*/
+Node* Insert(Node *head,int data)
+{
+  // Complete this method
+      
+    Node* new_node = new Node;
+    new_node->data=data;
+    new_node->next = nullptr;
+    
+    if(head == nullptr)
+    {
+        cout<<"First"<<endl;    
+        head = new_node;
+        return new_node;
+    }
+    else
+    {
+           Node* pos = new Node;
+            pos = head;
+           while(pos->next!=nullptr)
+           {
+               pos=pos->next;
+            }
+            
+            pos->next=new_node;
+            return head;          
+    }
+}
+
+
+
+
+Insert at the head
+
+Node* Insert(Node *head,int data)
+{
+  // Complete this method
+    Node* new_node = new Node;
+    new_node->data = data;
+    new_node->next = head;
+    head=new_node;
+    return head;
+}
+
+
+
+
+
+Insert at a certain position
+
+
+/*
+  Insert Node at a given position in a linked list 
+  head can be NULL 
+  First element in the linked list is at position 0
+  Node is defined as 
+  struct Node
+  {
+     int data;
+     struct Node *next;
+  }
+*/
+Node* InsertNth(Node *head, int data, int position)
+{
+  // Complete this method only
+  // Do not write main function. 
+
+    Node* new_node = new Node;
+    new_node->data = data;
+    new_node->next=nullptr;
+    
+    if(head==nullptr)
+    {
+        head=new_node;
+        return head;
+    }
+    else if(position==0)
+    {
+        new_node->next = head;
+        head = new_node;
+        return head;
+    }
+    else
+    {
+        Node* pos = new Node;
+        pos = head;
+        for(int i=0; i<position-1; i++)
+        {
+            pos=pos->next;
+            
+        }
+        if(pos->next==nullptr)
+        {
+            pos->next=new_node;
+        }
+        else
+        {
+            Node* temp = new Node;
+            temp = pos;
+            new_node->next=pos->next;
+            pos->next=new_node;            
+        }
+        return head;
+    }
+    
+    
+}
+
+
+
+Delete a Node
+
+
+Node* Delete(Node *head, int position)
+{
+  // Complete this method
+    
+    
+    
+    if(position==0)
+    {
+        Node* new_node = new Node;
+        new_node = head;
+        head = head->next;
+        delete new_node;
+        return head;
+        
+    }
+    else
+    {
+        Node* pos = new Node;
+        pos = head;
+        for(int i=0; i<position-1; i++)
+        {
+            pos=pos->next;
+        }
+        Node* temp = new Node;
+        temp = pos->next;
+        pos->next = temp->next;
+        delete temp;
+        return head;
+        
+    }
+}
+
+
+
+
+
+
+Print in reverse order
+
+
+void ReversePrint(Node *head)
+{
+  // This is a "method-only" submission. 
+  // You only need to complete this method. 
+    int count =0;
+    Node* temp = new Node;
+    temp = head;
+    while(temp!=nullptr)
+    {
+        temp=temp->next;
+        count++;
+    }
+    
+    while(count>0)
+    {
+        temp=head;
+        int i= 1;
+        while(i<count)
+        {
+            temp=temp->next;
+            i++;
+        }
+        cout<<temp->data<<endl;
+        count--;
+        
+    }
+    
+    
+    
+    
+}
+
+
+Reverse a linked list
+
+
+Node* Reverse(Node *head)
+{
+  // Complete this method
+    
+    Node* prev   = nullptr;
+    Node* current = head;
+    Node* next = nullptr;
+    while (current != nullptr)
+    {
+        next  = current->next;  
+        current->next = prev;   
+        prev = current;
+        current = next;
+    }
+    head = prev;
+    return head;
+    
+}
+
+method 2
+
+/*
+   Reverse a doubly linked list, input list may also be empty
+   Node is defined as
+   struct Node
+   {
+     int data;
+     Node *next;
+     Node *prev;
+   }
+*/
+Node* Reverse(Node* head)
+{
+    // Complete this function
+    // Do not write the main method.
+    
+    Node* tail = new Node;
+    tail = head;
+    if(head==nullptr) return head;
+    
+    
+    
+   while(head->next !=nullptr)
+    {
+        
+        head = head->next;
+    }
+    Node* temp = new Node;
+    temp = head;
+    Node* temp2 = new Node;
+    
+    while(temp != tail)
+    {
+        temp2 = temp->prev;
+        temp->prev = temp->next;
+        temp->next = temp2;
+        temp=temp->next;       
+    }
+    
+    temp->prev = temp->next;
+    temp->next = nullptr;   
+    
+    
+    return head;
+    
+}
+
+
+
+
+
+Linked Lists: Detect a Cycle
+
+bool has_cycle(Node* head) {
+    // Complete this function
+    // Do not write the main method
+    if(head==nullptr)return false;
+    
+    Node* temp= new Node;
+    
+    temp = head;
+    
+    int i=0;
+    while(i<101)
+    {
+     if(temp==nullptr)
+     {
+         return false;
+     }
+        else temp=temp->next;
+        i++;
+        
+        
+    }
+    return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

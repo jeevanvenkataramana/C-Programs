@@ -1,0 +1,71 @@
+
+Function declaration
+
+
+Return_type Fun_name(Parameter list);
+
+Return_type Fun_name(Type1 var_name1, Typee var_name2);
+
+
+
+
+Function definition
+
+Retur_type Fun_name(parameter list)
+{
+	Declarations;
+
+	exec statement1;
+	...
+	...
+
+	return statement;
+}
+
+
+
+
+
+Call by reference
+
+Declaration
+
+Return_type Fun_name( datatype1& variable1, datatype2& variable2);
+
+function call
+
+Fun_name(variable1, variable2);
+
+function definition
+
+Return_type Fun_name( datatype1& variable1, datatype2& variable2)
+
+
+
+addresses of arguements are passed. the variable act just like a pointer by calling a copy constructor
+
+
+
+
+Function definition to swap two values
+
+void swap(int &x, int &y) {
+   int temp;
+   temp = x; /* save the value at address x */
+   x = y;    /* put y into x */
+   y = temp; /* put x into y */
+  
+   return;
+}
+
+
+Passing pointers
+
+void swap(int *x, int *y) {
+   int temp;
+   temp = *x; /* save the value at address x */
+   *x = *y; /* put y into x */
+   *y = temp; /* put x into y */
+  
+   return;
+}

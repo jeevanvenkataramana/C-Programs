@@ -1,0 +1,7 @@
+01:37:17 **** Rebuild of configuration Debug for project PrimeSpirals ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o PrimeSpirals.o "..\\PrimeSpirals.cpp" 
+g++ -o PrimeSpirals.exe PrimeSpirals.o 
+
+01:37:20 Build Finished (took 2s.310ms)
+

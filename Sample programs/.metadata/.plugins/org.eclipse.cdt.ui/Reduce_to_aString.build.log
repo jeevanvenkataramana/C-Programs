@@ -1,0 +1,7 @@
+02:55:33 **** Rebuild of configuration Debug for project Reduce_to_aString ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Reduce_to_aStringMain.o "..\\Reduce_to_aStringMain.cpp" 
+g++ -o Reduce_to_aString.exe Reduce_to_aStringMain.o 
+
+02:55:36 Build Finished (took 3s.10ms)
+

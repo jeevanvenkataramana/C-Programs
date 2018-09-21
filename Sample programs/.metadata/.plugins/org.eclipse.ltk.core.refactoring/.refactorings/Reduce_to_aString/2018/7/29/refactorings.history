@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Reduce_to_aString/Reduce_to_stringMain.cpp&apos; to &apos;Reduce_to_aStringMain.cpp&apos;" description="Rename resource &apos;Reduce_to_stringMain.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Reduce_to_stringMain.cpp" name="Reduce_to_aStringMain.cpp" stamp="1532166704721" updateReferences="true"/>
+</session>

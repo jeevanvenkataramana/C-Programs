@@ -1,0 +1,205 @@
+
+Hash Table :
+
+a) The array maps and index to the data value stored in the array. The mapping function is efficient as long as the index value is known or within range.
+b) We can consider the index value to be the "key" to the corressponding data value.
+c) A hash table also stores data value but use a key to obtain the corressponding data value.
+d) The key need not be an integer value it can be of any data type or a class.
+e) The hash code are limited in size and no 
+f) If the hash table’s mapping function maps a key value into an integer in the range 0 to TableSize– 1, then we can use this integer value as the index into underlying array.
+
+
+Example :
+
+Suppose we are storing employee data records into a hash table. we can use employee name as the key.
+In an ideal situation employee records may end up in seperate cells.
+If table is large hash tables doesnot distribute keys well
+The more data we put the more collissions occur.
+
+The collision is when two or more data records are mapped to a same cell.
+
+Two approaches for collision resolution 
+
+1) Seperate chaining
+
+2) Open addressing
+	a) Linear Probing
+	b) Quadratic probing
+
+
+
+
+Seperate chaining :
+
+a) Each cell in a hash table is a pointer to a linked list of all records that hash to that entry.
+b) To retrieve a data we first hash to that cell.
+c) Then we search in the associated linked list for the data record.
+d) We can sort the link list to improve search performance.
+
+Open addressing :
+
+Linear Probing :
+
+	Insert : If the cell is filled look for the next empty cell.
+
+	Search : Start searching at the home cell. keep looking at the next cell untill the matching key is found. If you encounter an empty cell then there is no match.
+
+Quadratic Probing :
+
+	Search at 1, 2^2, 3^2, 4^2 positions.
+
+
+
+Load Factor : Ratio of number of elements in the table to the Table size
+
+
+
+
+
+Library:
+
+#include<map>
+
+
+Declaration :
+
+map< key_type, data_type> map_name;
+
+
+Insertion :
+
+map_name[key] = data;
+
+
+Retriving :
+
+map_name[key] --> will return the data value associated with key.
+
+if no data value present with this key a new garbage value gets inserted 
+so erase that entry for failure case. map_name.erase(key)
+
+
+
+Erase :
+
+map_name.erase(key);
+
+
+Search options :
+
+3 options :
+
+	1) check with value returned from --> map_name[key]
+		if not found map_name.erase(key);
+
+	2) Use iterator and find()
+		map<key_type, value_type>::iterator it = map_name.find(key);
+
+		if entry present it will be pointing to the corressponding value else map_name.end()
+
+
+	3) use at() and exception
+
+		map_name.at(key)
+
+		if not present throuws an exception out_of_range.
+
+
+
+
+
+
+
+
+
+
+builtin functions :
+
+1) Insert : map_name.insert(key, value)
+
+2) Operator[] : map_name[key] can be used for insertion as well as search
+
+3) Operator= : map_name[key]  Assigns new contents to the container, replacing its current content.
+
+4) find() : map_name.find(key) Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end.
+
+5) at() : map_name.at(key) return value at key else return exception exception out_of_range
+
+6) empty() : map_name.empty() returns whether the map is empty or not.
+
+7) erase() : map_name.erase(key) erase the data value associated with key.
+
+8) size() : returns the no of elements in the map container.
+
+9) max_size() : returns the maximum no of elements the map container can hold.
+
+10) clear() : map_name.clear() removes all elements from the map container.
+
+11) swap() : map1_name.swap(map2_name)  exchange contents of map1 with map2
+
+
+
+
+
+example :
+
+
+
+1)
+
+if(data[text].get_word() == text)
+   {
+      return &data[text];
+   }
+   else 
+   {
+     data.erase(text);          //since an entry of key gets inserted if not present
+      return nullptr;
+   }
+
+
+2)
+   map<string, Word>::iterator it = data.find(text);
+
+  if (it != data.end())
+   {
+      return &data[text];
+   }
+   else
+   {
+      return nullptr;
+   }
+   
+
+
+3)
+
+   try
+   {
+      if(data.at(text).get_word() == text)
+      return &data[text];
+   }
+
+   catch (const std::out_of_range& oor)
+   {
+      return nullptr;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+
+cmath
+
+sqrt(var_name);
+
+pow(base,power);
+
+fabs(-7.5) = 7.5		//absolute value for float
+
+ceil(3.2) = 4			
+
+floor(3.2) = 3
+
+
+
+
+
+
+
+cstdlib
+
+abs(-7) = 7			//absolute value of int
+
+labs(40000)			//absolute value for long
+
+
+
+ctime
+
+srand(time(0));			//if u dont seed u will always get same random sequence
+rand();				//returns a random no >= 0 and <RAND_MAX
+
+

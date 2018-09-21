@@ -1,0 +1,7 @@
+01:39:44 **** Rebuild of configuration Debug for project Splice_Lists ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Splice.o "..\\Splice.cpp" 
+g++ -o Splice_Lists.exe Splice.o 
+
+01:39:46 Build Finished (took 2s.5ms)
+

@@ -1,0 +1,7 @@
+01:31:04 **** Rebuild of configuration Debug for project Hex_Dec ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Hex_Dec.o "..\\Hex_Dec.cpp" 
+g++ -o Hex_Dec.exe Hex_Dec.o 
+
+01:31:06 Build Finished (took 2s.438ms)
+

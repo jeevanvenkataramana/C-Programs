@@ -1,0 +1,72 @@
+
+Selection sort
+
+1. start at index 0.
+
+2. search the smallest element in the unsorted list.
+
+3. swap the smallest value with position 0
+
+4. make similar N-1 passes over a list of N numbers.  
+
+
+
+Insertion sort( arranging cards)
+
+1. At pass 1 sort 1st and 2nd element.
+
+2. take the 3 rd element check with the 2nd element fit to the position it should placed.
+
+3. The array starts to sort from the beginning.
+
+ 
+
+Shell sort
+
+1. Like Insertion sort we compare with elements h elements apart.
+
+2. The final value of h is 1
+
+
+
+Quick sort
+
+
+
+
+
+Merge sort
+
+1. well suited for linked lists.
+
+2. List first be split into smaller sublists that can be sorted seperately
+
+Mechanism
+
+1. Pick an arbitrary value in the list.
+
+2. swap with the value to the right end.
+
+3. Set index i to the left end and set j to the right end - 1.
+
+4. Move i right skipping over values less than pivot. and stop when it reaches greater than pivot.
+
+5. Move j left skipping over values greater than pivot. and stop when it reaches lesser than pivot.
+
+6. After both i and j are stopped swap values. at i and j.
+
+7. Once i and j have crossed swap pivot with i position.   
+
+
+
+
+
+
+
+
+
+
+
+
+
+

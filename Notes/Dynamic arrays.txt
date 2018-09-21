@@ -1,0 +1,55 @@
+Arrays are passed to function as call by reference unless specified by const data type.
+if it should not be altered
+
+
+
+
+1D array
+
+int* a;
+cin>>n;
+a=new int[n];
+
+for(int i=0; i<n; i++)
+cin>>a[i];
+
+delete [] a;
+
+
+
+
+
+
+2D dynamic char array :
+
+void print(char** list, int n);
+
+int main()
+{
+	char** list;
+	cin>>n;
+	list = new char*[n];	//define number of rows
+
+	for(int i=0; i<n; i++)
+	{
+		list[i] = new char[len];	//define the no of columns. len is the max length of a string
+		cin>>list[i];			//make an entry for each row
+	}
+
+	print(list,n);
+	list[i][j] --> gives the character at i,j subscript
+
+
+	for(int i=0; i<n; i++)
+	delete[] list[i];		//deallocate each colums
+	delete[] list;			//delete rows
+}
+
+
+void print(char** list, int n)
+{
+	for(int i=0; i<n; i++)
+	{
+		cout<<list[i];
+	}
+}

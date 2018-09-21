@@ -1,0 +1,7 @@
+01:34:28 **** Rebuild of configuration Debug for project Insertion_Sort ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o InsertionSortApp.o "..\\InsertionSortApp.cpp" 
+g++ -o Insertion_Sort.exe InsertionSortApp.o 
+
+01:34:31 Build Finished (took 2s.836ms)
+

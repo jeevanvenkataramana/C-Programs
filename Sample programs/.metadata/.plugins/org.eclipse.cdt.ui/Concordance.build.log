@@ -1,0 +1,43 @@
+01:25:40 **** Rebuild of configuration Debug for project Concordance ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o WordMap.o "..\\WordMap.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o WordVector.o "..\\WordVector.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o TimedContainer.o "..\\TimedContainer.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Constitution.o "..\\Constitution.cpp" 
+..\Constitution.cpp:46:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void make_spot_checks(WordVector& v, WordMap& m) throw(string);
+                                                  ^~~~~
+..\Constitution.cpp:55:52: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void check_concordances(WordVector& v, WordMap& m) throw(string);
+                                                    ^~~~~
+..\Constitution.cpp:64:52: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void time_word_searches(WordVector& v, WordMap& m) throw(string);
+                                                    ^~~~~
+..\Constitution.cpp: In function 'void time_word_insertions(std::ifstream&, WordVector&, WordMap&)':
+..\Constitution.cpp:142:25: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+                   Word *a, *b;
+                         ^
+..\Constitution.cpp:142:29: warning: variable 'b' set but not used [-Wunused-but-set-variable]
+                   Word *a, *b;
+                             ^
+..\Constitution.cpp:163:25: warning: variable 'c' set but not used [-Wunused-but-set-variable]
+                   Word *c, *d;
+                         ^
+..\Constitution.cpp:163:29: warning: variable 'd' set but not used [-Wunused-but-set-variable]
+                   Word *c, *d;
+                             ^
+..\Constitution.cpp: At global scope:
+..\Constitution.cpp:192:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void make_spot_checks(WordVector& v, WordMap& m) throw(string)
+                                                  ^~~~~
+..\Constitution.cpp:239:52: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void check_concordances(WordVector& v, WordMap& m) throw(string)
+                                                    ^~~~~
+..\Constitution.cpp:282:52: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void time_word_searches(WordVector& v, WordMap& m) throw(string)
+                                                    ^~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Word.o "..\\Word.cpp" 
+g++ -o Concordance.exe Constitution.o TimedContainer.o Word.o WordMap.o WordVector.o 
+
+01:25:45 Build Finished (took 5s.632ms)
+

@@ -1,0 +1,85 @@
+01:33:28 **** Rebuild of configuration Debug for project Hotel_Code ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Bill.o "..\\Bill.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Model.o "..\\Model.cpp" 
+..\Model.cpp: In member function 'Order Model::viewOrder(int)':
+..\Model.cpp:51:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=0;i<orderlist.size();i++)
+              ~^~~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'void Model::cancelOrder(int)':
+..\Model.cpp:63:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=0;i<orderlist.size();i++)
+              ~^~~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'int Model::checkOrderId(int)':
+..\Model.cpp:78:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=0;i<orderlist.size();i++)
+              ~^~~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'int Model::checkBillId(int)':
+..\Model.cpp:89:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=0;i<billlist.size();i++)
+              ~^~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'Bill Model::generateBill(int, Order)':
+..\Model.cpp:114:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=0;i<items.size();i++)
+              ~^~~~~~~~~~~~~
+..\Model.cpp:106:6: warning: variable 'id' set but not used [-Wunused-but-set-variable]
+  int id,rid,option,phone,qty,paymentid=0,pstatus=0;
+      ^~
+..\Model.cpp:106:20: warning: unused variable 'phone' [-Wunused-variable]
+  int id,rid,option,phone,qty,paymentid=0,pstatus=0;
+                    ^~~~~
+..\Model.cpp:109:17: warning: unused variable 'tsum' [-Wunused-variable]
+  float stax,vat,tsum,sum,price,hd=0;
+                 ^~~~
+..\Model.cpp: In member function 'Bill Model::viewBill(int)':
+..\Model.cpp:143:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=0;i<billlist.size();i++)
+              ~^~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'void Model::cancelBill(int)':
+..\Model.cpp:155:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=0;i<billlist.size();i++)
+              ~^~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'int Model::checkRestaurantId(int)':
+..\Model.cpp:168:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0;i<paymentList.size();i++)
+               ~^~~~~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'int Model::checkMonth(int)':
+..\Model.cpp:182:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ for(int i=0;i<paymentList.size();i++)
+             ~^~~~~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'float Model::getDailySales(int, int, int)':
+..\Model.cpp:202:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ for(int i=0;i<paymentList.size();i++)
+             ~^~~~~~~~~~~~~~~~~~~
+..\Model.cpp: In member function 'Order Model::viewOrder(int)':
+..\Model.cpp:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\Model.cpp: In member function 'Bill Model::viewBill(int)':
+..\Model.cpp:150:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\Model.cpp: In member function 'float Model::getDailySales(int, int, int)':
+..\Model.cpp:231:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Order.o "..\\Order.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Item.o "..\\Item.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Ui.o "..\\Ui.cpp" 
+..\Ui.cpp: In member function 'void Ui::displayBill(Bill)':
+..\Ui.cpp:99:8: warning: unused variable 'price' [-Wunused-variable]
+  float price;
+        ^~~~~
+..\Ui.cpp:112:6: warning: unused variable 'j' [-Wunused-variable]
+  int j=o.getOption();
+      ^
+..\Ui.cpp: In member function 'void Ui::displayItem(std::vector<Item>)':
+..\Ui.cpp:125:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i=0;i<items.size();i++)
+              ~^~~~~~~~~~~~~
+g++ -o Hotel_Code.exe Bill.o Controller.o Item.o Model.o Order.o Ui.o main.o 
+
+01:33:35 Build Finished (took 7s.2ms)
+

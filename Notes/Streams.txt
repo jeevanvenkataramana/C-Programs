@@ -1,0 +1,149 @@
+
+fstreams 
+
+main program
+
+ifstream stream_var_name;
+ofstream stream_var_name2;
+
+
+input stream :
+
+
+stream_var_name.open(file_name);
+
+condition 1
+
+	if(stream_var_name.fail())
+	{
+		cout<<"failed to open"<<file_name;
+		return -1;
+	}
+
+
+reading a command
+
+	stream_var_name >> var_name;				// a stream variable will read untill a space
+
+
+
+condition 2
+	
+	while(!stream_var_name.fail())
+	{
+		
+
+		stream_var_name>>var_name;			//should be last command of loop always
+	}
+
+
+
+
+output stream
+
+	stream_var_name2.open("file_name2");				//the member function open will create the output file if it does not already exist. If the output file does already exist, the member function open will discard the contents of the file, so that the output file is empty after the call to open. connecting a stream to a file open file name
+
+	stream_var_name<<" text1 "<<var_name1<<" text2 "<<var_name2;	//this command will write the two texts and the contents of variable to output file. 
+
+
+
+closing streams
+
+stream_var_name.close();
+
+
+
+
+
+
+passing stream variable to a function by reference
+
+declaration 
+
+	return_type func_name(iftream &stream_var_name, parameter list);		//it should be ifstream or istream
+
+
+function call
+
+	execute(stream_var_name, parameters);
+
+
+function definition
+
+	return_type func_name(istream &stream_var_name, parameter list)
+
+
+
+
+
+when u want to input and output a object of certain class
+
+main prog
+
+	ifstream stream_var_name;
+	stream_var_name.open(file_name);
+	
+	condition 1
+
+	stream_var_name >> object;
+
+
+.h file
+
+	friend ostream& operator<<(ostream& output, Class_Name& object_name);
+	friend istream& operator>>(istream& input, Class_Name& object_name);
+
+
+.cpp file
+
+	ostream& operator <<( ostream& output, Class_Name& object_name)
+	{
+	
+		return output;
+	}
+
+	istream& operator>>( istream& input, Class_Name& object_name)
+	{
+	
+		return input;	
+	}
+
+
+
+
+
+
+
+
+
+example prog
+
+.h file
+
+
+enum class Category { FICTION, HISTORY, TECHNICAL, NONE };
+
+friend istream& operator >>(istream& ins, Book& emp);
+friend ostream& operator <<(ostream& outs, const Book& emp);
+
+
+
+.cpp file
+
+istream& operator >>(istream& ins, Book& book)
+{
+    getline(ins, book.isbn,  ',');
+    getline(ins, book.last,  ',');
+    getline(ins, book.first, ',');
+    getline(ins, book.title, ',');
+    string catstr;
+    getline(ins, catstr);
+
+    book.category = Book::Category::NONE;
+    if      (catstr == "fiction")   book.category = Book::Category::FICTION;
+    else if (catstr == "history")   book.category = Book::Category::HISTORY;
+    else if (catstr == "technical") book.category = Book::Category::TECHNICAL;
+    return ins;
+}
+
+

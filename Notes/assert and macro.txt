@@ -1,0 +1,23 @@
+Assert statement
+
+header file : #include<<cassert>
+
+
+The assert macro is a tool to ensure that the expected conditions are true at the location of the assert statement. If the condition is not met then the program will display an error message and abort.
+
+assert((i>=0)&&(i<=length));		control goes to the next statement only if conditions are met
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

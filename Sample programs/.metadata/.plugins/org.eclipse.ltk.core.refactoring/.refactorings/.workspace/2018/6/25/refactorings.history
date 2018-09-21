@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ConvertString&apos; to &apos;FormString&apos;" description="Rename resource &apos;ConvertString&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ConvertString" name="FormString" stamp="1529537443765" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;FormString/Debug&apos;" deleteContents="false" description="Delete resource &apos;FormString/Debug&apos;" element1="/FormString/Debug" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1529537529680"/>
+</session>

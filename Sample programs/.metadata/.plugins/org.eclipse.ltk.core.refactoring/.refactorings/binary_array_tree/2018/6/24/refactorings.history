@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;binary_array_tree/binary_array_tree&apos; to &apos;binary_array_tree.cpp&apos;" description="Rename resource &apos;binary_array_tree&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="binary_array_tree" name="binary_array_tree.cpp" stamp="1528600645303" updateReferences="true"/>
+</session>

@@ -1,0 +1,190 @@
+
+
+#include<cstring>		strcpy, strncpy
+
+c strings
+
+
+Declaration  
+
+char s[size];       "\0" n the array immediately after the last character of the C string.
+
+
+char s[20] = "Hi there.";	C-string variable need not fill the entire array.
+
+char s[] = "abc";		C-string variable omit the array size. automatically make the size of the C-string variable 1 more than the length of the quoted string.
+
+char s[] = {'a','b','c'};	this doesnt place the null character after c
+
+
+accessing elements length will be till u encounter a \0
+	
+by checking    s[index] = '\0';
+
+
+s = "hello";		// illegal  we can use only during declaration.
+
+strcpy(s,"hello");	//valid    but doesnt check on size
+
+strncpy( a, b, 9);	//copies b to a only till index 9
+
+
+
+comparing 2 c strings
+
+strcmp(a,b)		//zero if equal    
+
+strlen("hello")		//returns 5 
+
+strcat(s, "in spain");	//will add in spain to s and then \0
+
+strncat(s, a, limit);	//at most Limit characters are appended
+
+
+
+
+Input
+
+char a[10], b[10];
+cin>>a>>b;
+cout<<a<<b;
+
+Output
+
+Hi Jeevan how are you
+Hi Jeevan
+
+C-string variable using the input operator >>, but all whitespace(blanks, tabs, and line breaks) are skipped when C strings are read this way. Moreover, each reading of input stops at the next space or line break.
+
+
+
+
+To read enter line including spaces
+
+Input
+
+char a[30];
+cin.getline(a, 30);
+cout<<a;
+
+Output
+
+Hi I am jeevan
+Hi I am jeevan
+
+getline( a, size);      // first arguement is C string, 2nd one max elements that get getline will allow to fill
+
+
+Input
+
+char a[5];
+cin.getline(a, 5);
+cout<<a;
+
+Output
+
+Jeevan
+Jeev
+
+
+C strings to number conversions
+
+
+#include<cstdlib>
+
+atoi
+atol
+atof
+
+int x = atoi("657");
+
+double x = atof("12.37");
+
+
+
+
+
+		//String data type
+
+
+
+
+
+#include<string>
+
+string s;		//Declaration
+
+
+string s = "Hello Jeevan!";   or string s("Hello Jeevan!");
+
+string is not terminated by a '\0' character.
+
+s.at(index) = 'x';
+s[index] = 'x';				//is equal to a char. u can pass to a function with arguement char 
+
+
+Input and output
+
+string s1, s2;
+cin>>s1;
+getline(cin, s1);		//inputs the whole line with space until return is pressed
+cout<<s1<<endl<<s2<<endl;
+
+
+output :
+
+Hi Jeevan how are you
+Hi Jeevan how are you
+Hi
+Hi Jeevan how are you
+
+
+
+s3 = s1 +s2;		//string concatenation    If the sum of lengths of s1 and s2 exceeds the capacity of s3 space is automatically allocated for s3.
+
+or 
+
+s3 = "Hi " + s1 + s2;
+
+Ex1 :
+
+int main( )
+{
+string s;
+string s1("Hi"), s2("How are you");
+s = s1 + " Jeevan " + s2 + "!";
+cout << s << endl;
+return 0;
+}
+
+Output :
+
+Hi Jeevan How are you!
+
+
+str[i]				//Returns read/write reference to character in str at index i.Does not check for illegal index.
+
+str.at(i)			//Returns read/write reference to character in str at index i.Same as str[i], but this version checks for illegal index.
+
+str.substr(position, length)	//Returns the substring of the calling object starting at position and having length characters
+
+str.length()			//Returns the length of str.
+
+str.empty( )			//Returns true if str is an empty string; false otherwise
+
+str.insert(pos, str2);		//Inserts str2 into str beginning at position pos.
+
+str.erase(pos, length);		//Removes substring of size length, starting at position pos.
+
+str1 == str2			//Compare for equality
+
+str.find(str1)			//Returns index of the first occurrence of str1 in str. If str1 is not found then the special value string::npos is returned.
+
+str.find(str1, pos)		//Returns index of the first occurrence of string str1 in str the search starts at position pos
+
+
+
+ 	
+
+
+

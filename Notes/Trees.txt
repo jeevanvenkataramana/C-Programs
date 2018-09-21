@@ -1,0 +1,255 @@
+Tree Traversal
+
+Uses :
+
+Inorder : sorted order in non-decreasing.
+
+Preorder : Create a copy of the tree. also used to get prefix expression on of an expression tree.
+
+Postorder : Delete the tree. Also to get postfix expression on an expression tree.
+
+Lever order : learn this
+
+shortuct to remember  ^<>
+
+
+Inorder Traversal :
+
+void inOrder(node *root) {
+if(root==nullptr)return;
+inOrder(root->left);
+cout<<root->data<<" ";
+inOrder(root->right);
+}
+
+
+PreOrder traversal :
+
+void preOrder(node *root) {
+
+if(root==nullptr)return;
+cout<<root->data<<" ";
+preOrder(root->left);
+preOrder(root->right);
+}
+
+
+PostOrder traversal :
+
+void postOrder(node *root) {
+    
+    if(root == nullptr)return;
+    
+    postOrder(root->left);
+    postOrder(root->right);
+    cout<<root->data<<" ";
+}
+
+
+Height of a binary serach tree :
+
+ int height(Node* root) {
+     
+        if(root==nullptr) return -1;
+        else{
+        int lheight = height(root->left);
+        int rheight = height(root->right);
+        
+        if(lheight>rheight)return(lheight+1);
+        else return(rheight+1);
+    
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+Binary Search Tree : Insertion 
+
+
+in while(1)  keep checking whether the value less than root or greater than root. if less than root change to left or otherwise. at any point if it is a nullptr check the prev value and isert accordingly.
+/*
+Node is defined as 
+
+typedef struct node
+{
+   int data;
+   node * left;
+   node * right;
+}node;
+
+*/
+node * insert(node * root, int value) {
+    
+node* new_node = new node;
+new_node->data = value;
+    
+   
+if(root == nullptr)
+{
+     root = new_node;
+     return root;
+}
+    
+node* temp = new node;
+temp=root;
+node* temp_prev = new node;
+   
+while(1)
+{
+    if(temp->data<value)
+    {
+        temp_prev = temp;
+        temp=temp->right;
+    }
+    else{
+        temp_prev = temp;
+        temp=temp->left;
+    }
+    if(temp==nullptr)
+    {
+        if(value>temp_prev->data)
+        {
+            
+            temp_prev->right=new_node;
+            return root;
+        }
+        else{
+            temp_prev->left=new_node;
+            return root;
+        }
+    }
+}
+    return root;
+   
+}
+
+
+
+Check Binary Search tree : check roots left data and right data and return false if contradicting. else return recursicve call of root->left logical and with root->right
+
+bool checkBST(Node* root) {
+       
+       
+if(root==nullptr) return true;
+if(root->left!=nullptr)
+{
+    if(root->left->data>root->data)
+    {
+        return false;
+    }
+}
+           
+if(root->right!=nullptr)
+{
+    if(root->right->data<root->data)
+    {
+        return false;
+    }
+}
+      return(checkBST(root->left) && checkBST(root->right));
+}
+
+
+
+
+
+
+
+Binary Search Tree : Lowest Common Ancestor
+
+You are given pointer to the root of the binary search tree and two values  and . You need to return the lowest common ancestor (LCA) of  and  in the binary search tree.
+
+			1
+
+	2				3
+
+4		5
+
+	6
+
+
+In the above example, the lowest common ancestor of the nodes  and  is the node , as  is the lowest common node which has both the nodes  and  as it's descendants.
+
+
+
+/*
+Node is defined as 
+
+typedef struct node
+{
+   int data;
+   node *left;
+   node *right;
+}node;
+
+*/
+
+
+node *lca(node *root, int v1,int v2)
+{
+
+    node* new_node = new node;
+    new_node = root;
+    
+    if(v1 < new_node-> data && v2< new_node->data)
+    {
+       return(lca(new_node->left, v1, v2));
+    }
+
+    if(v1 > new_node->data && v2 > new_node->data)
+    {
+       return(lca(new_node->right, v1, v2));
+    }
+
+    if(v1 == new_node->left->data || v1 == new_node->right->data || v2 == new_node->left->data || v2 == new_node->right->data)
+    {
+        return new_node;
+    }
+   return new_node;
+}
+
+
+
+Tree : Top View
+
+
+void topView(node * root) {
+    
+    node* temp = new node;
+    temp = root;
+    vector<int> list;
+    while(temp != nullptr)
+    {
+        list.push_back(temp->data);
+        temp=temp->left;
+    }
+    
+    for(int i=list.size()-1; i>=0; i--)
+    {
+        cout<<list[i]<<" ";
+    }
+    temp=root;
+    while(temp->right != nullptr)
+    {
+        cout<<temp->right->data<<" ";
+        temp=temp->right;
+    }
+        
+    return;
+}
+
+
+
+
+
+
+
+
+

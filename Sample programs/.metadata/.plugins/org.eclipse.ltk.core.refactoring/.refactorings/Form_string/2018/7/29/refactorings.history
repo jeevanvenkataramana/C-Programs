@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Form_string/Is_substring.cpp&apos; to &apos;Form_string.cpp&apos;" description="Rename resource &apos;Is_substring.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Is_substring.cpp" name="Form_string.cpp" stamp="1532147079983" updateReferences="true"/>
+</session>

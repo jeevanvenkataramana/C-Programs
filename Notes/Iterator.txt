@@ -1,0 +1,20 @@
+Iterator 
+
+An iterator is any object that, pointing to some element in a range of elements
+
+iterator can be used on arrays, vectors , maps
+
+
+Declaration : 
+
+data_type ::iterator iterator_name = initializer;
+
+ex:
+
+vector<Word>::iterator      itv = vdata.begin();
+
+
+
+Initializer :
+
+.begin() -- Initializes the begin of array or vector 

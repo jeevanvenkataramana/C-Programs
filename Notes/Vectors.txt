@@ -1,0 +1,37 @@
+Declaration
+
+vector< Type > var_name;
+
+vector< int > v(10);			//first ten elements are initialized to 0,  to set v[10] we should use push_back
+
+
+In vectors u cannot assign a value to a position unless it had some value before
+
+i.e   to initialize a vector to something first push_back
+
+
+v.size()		--> returns size of the vector
+
+v.capacity()		--> no of elements for which it currently has memory allocated
+
+v.reserve(value)	--> increases the capacity of the vector
+
+v.resize(value)
+
+v.resize(24)
+If the previous size was less than 24, then the new elements are initialized as
+we described for the constructor with an integer argument. If the previous size
+was greater than 24, then all but the first 24 elements are lost
+
+
+example : both are same
+
+for (int i = 0; i < ages.size(); i++)
+{
+    cout << ages[i] << endl;
+} 
+
+for (int age : ages)
+{
+    cout << age << endl;
+} 

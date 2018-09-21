@@ -1,0 +1,81 @@
+
+Data types
+
+short		2 bytes
+
+int		4 bytes
+
+long		4 bytes
+
+float		4 bytes
+
+double		8 bytes
+
+long double	10 bytes
+
+
+Type def
+
+typedef can be used to define an alias for any type name or definition. 
+
+typedef int* IntPtr;					IntPtr can be used to define a pointer of int data type.
+
+
+
+Type casting
+
+data_type1 var_name = static_cast<data_type1> (numerator)/den		// can either be a denominator or a numerator not both
+
+
+Output decimal format in 2 decimal points
+
+cout.setf(ios::fixed);
+cout.setf(ios::showpoint);
+cout.precision(2);
+
+
+setw(width on output field);
+setprecision(no of decimal places);
+
+
+
+
+global constant declaration
+
+int var_name = value;			//value can be changed 
+
+const int var_name = value;		// global constant value cannot be changed
+
+
+
+
+Enumeration data type
+
+enum Var_name { const1 = value1, const2 = value2, const3 = value3};
+
+or 
+
+enum Var_name { const1, const2, const3};		//if values not specified consecutive values will be assigned
+
+
+Enum class
+
+.h file
+
+enum class type_name { const1, const2 , const3 };
+
+type_name mem_var_name;
+
+
+.cpp file
+
+assigning a value to enum 
+
+obj.mem_var_name = class :: type_name :: const1;
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+02:07:09 **** Incremental Build of configuration Debug for project Spreadsheet_Notation_Conversion ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Spreadsheet_Notation_ConversionMain.o "..\\Spreadsheet_Notation_ConversionMain.cpp" 
+g++ -o Spreadsheet_Notation_Conversion.exe Spreadsheet_Notation_ConversionMain.o 
+Info: Nothing to build for Spreadsheet_Notation_Conversion
+00:25:31 **** Rebuild of configuration Debug for project Bit_Change ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Bit_Change.o "..\\Bit_Change.cpp" 
+g++ -o Bit_Change.exe Bit_Change.o 
