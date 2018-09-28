@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Linkedlist_ReversePrint/Linkedlist_Reverse.cpp&apos; to &apos;Linkedlist_ReversePrint.cpp&apos;" description="Rename resource &apos;Linkedlist_Reverse.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Linkedlist_Reverse.cpp" name="Linkedlist_ReversePrint.cpp" stamp="1538128849656" updateReferences="true"/>
+</session>

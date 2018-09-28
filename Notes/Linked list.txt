@@ -76,8 +76,6 @@ Insert at a certain position
 */
 Node* InsertNth(Node *head, int data, int position)
 {
-  // Complete this method only
-  // Do not write main function. 
 
     Node* new_node = new Node;
     new_node->data = data;
@@ -127,8 +125,7 @@ Delete a Node
 
 Node* Delete(Node *head, int position)
 {
-  // Complete this method
-    
+   
     
     
     if(position==0)

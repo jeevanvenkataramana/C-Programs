@@ -1,0 +1,16 @@
+02:17:55 **** Incremental Build of configuration Debug for project Singly_Linked_list ****
+Info: Internal Builder is used for build
+g++ -o Singly_Linked_list.exe Insert_atHead.o Insert_element.o 
+Insert_element.o: In function `main':
+C:\Users\jeevan venkataramana\eclipse-workspace\Singly_Linked_list\Debug/../Insert_element.cpp:21: multiple definition of `main'
+Insert_atHead.o:C:\Users\jeevan venkataramana\eclipse-workspace\Singly_Linked_list\Debug/../Insert_element.cpp:21: first defined here
+Insert_element.o: In function `Insert(Node*, int)':
+C:\Users\jeevan venkataramana\eclipse-workspace\Singly_Linked_list\Debug/../Insert_element.cpp:40: multiple definition of `Insert(Node*, int)'
+Insert_atHead.o:C:\Users\jeevan venkataramana\eclipse-workspace\Singly_Linked_list\Debug/../Insert_element.cpp:40: first defined here
+Insert_element.o: In function `Print(Node*)':
+C:\Users\jeevan venkataramana\eclipse-workspace\Singly_Linked_list\Debug/../Insert_element.cpp:68: multiple definition of `Print(Node*)'
+Insert_atHead.o:C:\Users\jeevan venkataramana\eclipse-workspace\Singly_Linked_list\Debug/../Insert_element.cpp:68: first defined here
+collect2.exe: error: ld returned 1 exit status
+
+02:17:56 Build Finished (took 1s.418ms)
+
