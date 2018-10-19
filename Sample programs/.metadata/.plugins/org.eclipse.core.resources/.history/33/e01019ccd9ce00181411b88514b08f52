@@ -1,0 +1,54 @@
+/*
+ * Binary_Search.cpp
+ *
+ *  Created on: Oct 13, 2018
+ *      Author: jeevan venkataramana
+ */
+#include<iostream>
+using namespace std;
+int sorted_search(int *elements, int size, int target)
+{
+	if(size<=0 || !elements) return -1;
+
+	int left=0, right = size-1;
+
+
+	while(left<right)
+	{
+		int middle=(left+right+1)/2;
+
+		if(elements[middle]> target)
+		{
+			right=middle-1;
+		}
+		else
+		{
+			left=middle+1;
+		}
+
+		if(elements[middle]==target) return middle;
+	}
+
+
+	cout<<"hi";
+	return -1;
+}
+
+
+
+int main()
+{
+	int* elements;
+	elements= new int [6];
+
+	elements[0]=1;
+	elements[1]=2;
+	elements[2]=3;
+	elements[3]=4;
+	elements[4]=5;
+	elements[5]=6;
+	cout<<"enter target: "<<endl;
+	int target;
+	cin>>target;
+	cout<<sorted_search(elements,6,target);
+}

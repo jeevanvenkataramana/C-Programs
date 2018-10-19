@@ -1,5 +1,5 @@
-03:23:17 **** Incremental Build of configuration Debug for project Linkedlist_DetectCycle ****
+02:40:34 **** Incremental Build of configuration Debug for project Inheritance_derived ****
 Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Linkedlist_DetectCycle.o "..\\Linkedlist_DetectCycle.cpp" 
-g++ -o Linkedlist_DetectCycle.exe Linkedlist_DetectCycle.o 
-Info: Nothing to build for Linkedlist_DetectCycle
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Inheritance_derived.o "..\\Inheritance_derived.cpp" 
+g++ -o Inheritance_derived.exe Inheritance_derived.o 
+Info: Nothing to build for Inheritance_derived

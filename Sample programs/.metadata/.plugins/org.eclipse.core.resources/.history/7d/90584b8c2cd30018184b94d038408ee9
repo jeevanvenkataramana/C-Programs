@@ -1,0 +1,57 @@
+/*
+ * Inheritance_diamond.cpp
+ *
+ *  Created on: Oct 18, 2018
+ *      Author: jeevan venkataramana
+ */
+
+#include<iostream>
+
+using namespace std;
+
+class person
+{
+public:
+	void activity()
+	{
+		cout<<"Eat and sleep"<<endl;
+	}
+};
+
+
+class student: public person
+{
+public:
+	void study()
+	{
+		cout<<"Eat and study"<<endl;
+	}
+
+};
+
+class employee: public person
+{
+public:
+	void work()
+	{
+		cout<<"Eat and work"<<endl;
+	}
+
+};
+
+class intern: public employee, public student
+{
+public:
+	void task()
+	{
+		cout<<"Eat study and work"<<endl;
+	}
+
+};
+
+int main()
+{
+	intern a;
+	a.study();
+
+}
