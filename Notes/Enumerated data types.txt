@@ -1,0 +1,39 @@
+
+
+Enum data type
+
+
+Input:
+
+#include<iostream>
+using namespace std;
+enum direction {East, West, North, South};
+int main()
+{
+    direction dir;
+   dir = North;
+   cout<<dir;
+   return 0;
+}
+
+Output:
+2
+
+
+
+
+#include <iostream>
+using namespace std;
+enum direction {East=11, West=22, North=33, South=44};
+int main(){
+   direction dir;
+   dir = South;
+   cout<<dir; 
+   return 0;
+}
+
+Output
+44
+
+
+

@@ -1,0 +1,313 @@
+
+Inheritance: Inheritance is one of the feature of Object Oriented Programming System(OOPs), it allows the child class to acquire the properties (the data members) and functionality (the member functions) of parent class.
+
+Examples
+
+Simple Inheritance
+
+#include<iostream>
+using namespace std;
+class person
+{
+public:
+	void activity()
+	{
+		cout<<"Eat and sleep"<<endl;
+	}
+};
+
+class student: public person
+{
+public:
+	void study()
+	{
+		cout<<"Eat and study"<<endl;
+	}
+	void activity()				// an example of overriding the definition
+	{
+		cout<<"Eat sleep and study";
+	}
+};
+
+int main()
+{
+	student a;
+	a.study();
+	a.activity();
+}
+
+Output:
+
+Eat and study
+Eat sleep and study
+
+
+Inheritnace setting parent class from child class
+
+Input:
+
+#include<iostream>
+using namespace std;
+class person
+{
+public:
+	string name;
+public:
+	person(string name)
+	{
+		this->name=name;
+	}
+};
+
+class student: public person
+{
+public:
+	int id;
+public:
+student(string name, int id):person(name)
+{
+	this->name=name;
+	this->id=id;
+}
+void print()
+{
+	cout<<"Name :"<<name<<"  id "<<id<<endl;
+}
+};
+
+int main()
+{
+	student a("jeevan",37);
+	a.print();
+}
+
+
+Output
+Name  :jeevan	id 37
+
+
+Diamond Problem
+
+
+#include<iostream>
+using namespace std;
+class person
+{
+public:
+	void activity()
+	{
+		cout<<"Eat and sleep"<<endl;
+	}
+};
+
+/* virtual must be added else intern will have two copies of activity and might not know which one to use*/
+class student: public virtual person
+{
+public:
+	void study()
+	{
+		cout<<"Eat and study"<<endl;
+	}
+};
+
+class employee: public virtual person
+{
+public:
+	void work()
+	{
+		cout<<"Eat and work"<<endl;
+	}
+};
+
+class intern: public employee, public student
+{
+public:
+	void task()
+	{
+		cout<<"Eat study and work"<<endl;
+	}
+};
+
+int main()
+{
+	intern a;
+	a.activity();
+}
+
+Output:
+Eat and sleep
+
+
+
+
+
+
+
+Polymorphism: is a feature of OOPs that allows the object to behave differently in different conditions. 
+
+In C++ we have two types of polymorphism:
+1) Compile time Polymorphism  - Function overloading
+2) Runtime Polymorphism - Function overriding
+
+
+compile time polymorphism: function overloading and operator overloading.
+
+#include <iostream>
+using namespace std;
+
+class Add {
+public:
+  int sum(int num1, int num2){
+     return num1+num2;
+  }
+  int sum(int num1, int num2, int num3){
+     return num1+num2+num3;
+  }
+};
+
+int main() {
+  Add obj;
+  cout<<"Output: "<<obj.sum(10, 20)<<endl;
+  cout<<"Output: "<<obj.sum(11, 22, 33);
+  return 0;
+}
+
+Output
+
+Output: 30
+Output: 66
+
+
+Runtime Polymorphism: Function overriding
+
+
+#include <iostream>
+using namespace std;
+class A {
+public:
+  void disp(){
+     cout<<"Super Class Function"<<endl;
+  }
+};
+class B: public A{
+public:
+  void disp(){
+     cout<<"Sub Class Function";
+  }
+};
+int main() {
+  A obj;
+  obj.disp();
+  B obj2;
+  obj2.disp();
+  return 0;
+}
+
+Output
+
+Super Class Function
+Sub Class Function
+
+
+
+
+Virtual function in function overriding
+
+
+Input:
+
+#include<iostream>
+using namespace std;
+class A{
+public:
+   void activity(){
+      cout<<"This is a parent class";
+   }
+};
+//child class or sub class or derived class
+class D : public A{
+public:
+   void activity(){ 
+      cout<<"This is sub class";
+   }
+};
+int main(){
+   A *obj;
+   obj = new D();
+   obj->activity();
+   return 0;
+}
+
+Output:
+This is a parent class		//print parent function even though the 
+					object points to base class.
+
+
+Input:
+
+#include<iostream>
+using namespace std;
+class A{
+public:
+   virtual void activity(){			// compiler determines the type of object
+							and calls appropriate function.
+      cout<<"This is a parent class";
+   }
+};
+//child class or sub class or derived class
+class D : public A{
+public:
+   void activity(){ 
+      cout<<"This is sub class";
+   }
+};
+int main(){
+   A *obj;
+   obj = new D();
+   obj->activity();
+   return 0;
+}
+
+Output:
+This is a sub class
+
+
+
+
+
+
+Abstraction: is one of the feature of Object Oriented Programming, where you show only relevant details to the user and hide irrelevant details.
+
+
+example
+
+
+Input:
+
+#include <iostream>
+using namespace std;
+class AbstractionExample{
+private:
+   int num;
+   char ch;
+
+public:
+   void setMyValues(int n, char c) {
+      num = n; ch = c;
+   }
+   void getMyValues() {
+      cout<<"Numbers is: "<<num<< endl;
+      cout<<"Char is: "<<ch<<endl;
+   }
+};
+int main(){
+   AbstractionExample obj;
+   obj.setMyValues(100, 'X');
+   obj.getMyValues();					--> No need to send data again the object contains data
+   return 0;
+}
+
+Output
+
+Numbers is: 100
+Char is: X

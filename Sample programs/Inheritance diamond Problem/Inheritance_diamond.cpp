@@ -57,5 +57,4 @@ int main()
 	a.study();
 	a.work();
 	a.task();
-
 }

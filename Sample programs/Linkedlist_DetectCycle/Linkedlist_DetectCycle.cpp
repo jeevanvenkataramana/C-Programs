@@ -42,8 +42,32 @@ int main()
 	temp2->next=temp;
 	Print(head);
 	cout<<endl<<endl<<"Do we have a cycle:"<<has_cycle(head);
+
 	return 0;
 }
+
+bool has_cycle(Node* head) {
+    if(head==nullptr)return false;
+    unordered_set<Node*> temp;
+    Node* temp1=head;
+    while(temp1!=nullptr)
+    {
+        if(temp.find(temp1)!=temp.end())
+        {
+            return true;
+        }
+        temp.insert(temp1);
+        temp1=temp1->next;
+    }
+    return false;
+}
+
+
+
+
+
+
+
 
 bool has_cycle(Node* head) {
 
