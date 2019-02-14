@@ -1,0 +1,62 @@
+Page 55 of coding book
+
+
+Order of complexity
+
+O(log n)
+O(n)
+O(n log n)
+O(n2)
+
+
+Space Complexity
+
+amount of memory required by the algorithm
+
+
+Space complexity: O(n)
+
+int sum(int n) {
+ if (n <= a) {
+ return B;
+ }
+ return n + sum(n-1);
+}
+
+sum(4)
+2 -> sum(3)
+3 -> sum(2)
+4 -> sum(l)
+5 -> sum(a) 
+
+
+Space complexity O(1)
+
+int pairSumSequence(int n) {
+ int sum = 0j
+ for (int i = 0j i < nj i++) {
+ sum += pairSum(i, i + l)j
+}
+return sum;
+}
+
+int pairSum(int a, int b) {
+return a + bj
+}
+
+
+Complexity of recursive calls
+
+O(branches ^ depth)
+
+branches = no of recursive calls
+
+
+
+
+O(2N)=O(3N)=O(N)
+
+
+
+
+  
