@@ -5,45 +5,31 @@
  *      Author: jeeva
  */
 
-#include<iostream>
 
+#include <iostream>
 using namespace std;
-int main()
+void insertion_sort(int* a,int len)
 {
-	int n;
-	cout<<endl<<"Enter no of elements : ";
-	cin>>n;
-	int a[n];
-	for(int i=0; i<n; i++)
-	{
-		cin>>a[i];
-	}
-
-	for(int i=0; i<n; i++)
-	{
-		int j=i;
-		while(j-1>=0)
-		{
-			if(a[j]<a[j-1])
-			{
-				int temp = a[j];
-				a[j]=a[j-1];
-				a[j-1]=temp;
-			}
-			else
-			{
-				break;
-			}
-			j--;
-		}
-	}
-	cout<<endl<<" Elements after Insertion sort "<<endl<<endl;
-	for(int i=0; i<n; i++)
-		{
-			cout<<a[i]<<"\t";
-		}
-
-
-	return 0;
+    for(int i=1;i<len;i++)
+    {       
+        int j=i-1;
+        int key=a[i];
+        while( a[j]>key && j>=0)
+        {
+            a[j+1]=a[j];
+            j--;
+        }
+        a[j+1]=key;
+    }
 }
 
+int main()
+{
+    int a[10]={2,5,3,4,1,9,8,7,6,0};
+    insertion_sort(a,10);
+    for(int i=0; i<10; i++)
+    {
+        cout<<a[i];
+    }
+    return 0;
+}
