@@ -18,3 +18,57 @@ vector<Word>::iterator      itv = vdata.begin();
 Initializer :
 
 .begin() -- Initializes the begin of array or vector 
+.end() -- Initializes to the end
+
+
+*itv = gives the content
+++itv = moves to the next mem location
+
+
+
+sample
+
+Input:
+
+
+#include<iostream>
+
+#include<vector>
+
+using namespace std;
+
+
+int main()
+
+{
+    
+    
+	vector<int> myvector (3,100);
+    
+	vector<int>::iterator it;
+
+  
+	it = myvector.begin();
+  
+	it = myvector.insert ( it , 200 );
+
+    
+	myvector.insert (it,2,300);
+    
+    
+    
+
+	for (it=myvector.begin(); it<myvector.end(); it++)
+	{
+
+    		cout << ' ' << *it;
+
+  	}
+	return 0;
+
+}
+
+
+Output
+
+300 300 200 100 100

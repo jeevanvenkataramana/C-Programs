@@ -1,0 +1,28 @@
+Type Casting
+
+Implicit Conversion: Done by compiler on its own
+
+Explicit conversion: forcefully done
+
+
+float x=1.0;
+int sum = (int)x + 1;
+
+
+Conversion using cast operator
+
+Static cast
+
+#include <iostream> 
+using namespace std; 
+int main() 
+{ 
+  float f = 3.5; 
+  int b = static_cast<int>(f); 
+  cout << b; 
+} 
+
+Dynamic cast
+
+Ones that pass compile time but fail during runtime
+
