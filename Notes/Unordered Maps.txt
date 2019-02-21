@@ -1,0 +1,89 @@
+#include <iostream>
+#include <string>
+#include <unordered_map>
+using namespace std;
+int main ()
+{
+    unordered_map<string,double> myrecipe = {{"milk",2.0}};
+    
+    //Insert Operations
+    pair<string,double> temp ("flour",3);
+    myrecipe.insert(temp);
+    
+    myrecipe.insert({{"oil",2},{"chilli",4}});
+    
+    myrecipe["salt"]=1.0;
+    myrecipe["salt"]++;
+    
+    //size and empty operations
+    cout<<"my recipe size :"<<myrecipe.size()<<endl<<endl;
+    cout<<"recipe empty or not?  "<<(myrecipe.empty()?"empty":"Not empty")<<endl<<endl;
+
+    //Printing    
+    cout << "myrecipe contains:" << endl<<endl;
+    for (auto& x: myrecipe)
+        cout << x.first << ": " << x.second << endl;
+
+    //Erase
+    myrecipe.erase("salt");
+    
+    //Finding Operations    
+    cout <<endl<< "Finding Milk Quantity" << endl<<endl;
+    auto it = myrecipe.find("milk");
+    if(it!=myrecipe.end())
+    {
+        cout<<"Milk quantity is :"<<myrecipe["milk"]<<endl<<endl;
+    }
+    else
+    {
+        cout<<"Not Found"<<endl<<endl;
+    }
+    //finding second approach
+    cout << "Finding Milk Quantity approach 2" << endl<<endl;
+    if(myrecipe.count("milk"))
+    {
+        cout<<"Milk quantity is :"<<myrecipe["milk"]<<endl<<endl;
+    }
+    else
+    {
+        cout<<"Not Found"<<endl<<endl;
+    }
+    
+    cout <<endl<<"myrecipe contains:" << endl;
+    for (auto& x: myrecipe)
+        cout << x.first << ": " << x.second << endl;
+    
+    //clear operation
+    myrecipe.clear();
+    cout <<endl;
+  return 0;
+}
+
+Output
+
+my recipe size :5
+
+recipe empty or not?  Not empty
+
+myrecipe contains:
+
+salt: 2
+milk: 2
+flour: 3
+chilli: 4
+oil: 2
+
+Finding Milk Quantity
+
+Milk quantity is :2
+
+Finding Milk Quantity approach 2
+
+Milk quantity is :2
+
+
+myrecipe contains:
+milk: 2
+flour: 3
+chilli: 4
+oil: 2

@@ -1,0 +1,172 @@
+contains set of unique elements. elements are present in no order
+
+Library
+
+#include<unordered_set>
+
+
+Declararion
+
+unordered_set<Data type of value> variable_name = {value1,value2,value3};
+
+
+Operations
+
+Insert:		variable_name.insert(value);
+
+Erase:		variable_name.erase(value);							//erase a value
+		variable_name.erase(variable_name.find(value), variable_name.end())		//erase by a range
+
+clear:		variable_name.clear()
+
+size:		variable_name.size()								// returns size of set
+
+empty:		variable_name.empty()								// returns true if empty
+
+count:		variable_name.count(value)							// returns 1 if found else 0   since unordered set contains only 1 value, Useful for find operations
+
+
+Find Operations
+
+find:		variable_name.find(value)							// returns iterator to the position or string::npos
+
+
+Iterators
+
+begin:		variable_name.begin()
+
+end:		variable_name.end()
+
+cbegin:		variable_name.cbegin()								//similar to begin but values cannot be modified
+
+
+swap:		variable1.swap(variable2)							// swap 2 sets
+
+
+
+
+Example 1:
+
+
+#include <iostream>
+
+#include <string>
+
+#include <unordered_set>
+
+#include<iterator>
+
+using namespace std;
+
+
+int main ()
+
+{
+  
+	unordered_set<string> myset = {"USA","Canada","France","UK","Japan","Germany","Italy"};
+
+
+	myset.insert("India");                          //Insert a value
+    
+	myset.erase("Germany");                        //erase a value
+    
+	cout<<"The size of set: "<<myset.size()<<endl;  //size of set
+    
+	if(myset.count("India"))                        //find first approach 1   count() will return 1 or 0 only
+    
+	{
+        
+		cout<<"Search String found"<<endl;
+    
+	}
+    
+	else
+    
+	{
+        
+		cout<<"Search String Not found"<<endl;
+    
+	}
+        
+
+	//find approach 2
+    
+	unordered_set<string>::iterator temp = myset.begin();
+    
+	temp = myset.find("Germany");
+    
+	if(temp==myset.end())
+    
+	{
+        
+		cout<<"Country Not Found"<<endl;
+    
+	}
+    
+	else
+    
+	{
+        
+		cout<<*temp<<" Found"<<endl;
+    
+	}
+    
+    
+
+	//printing
+    
+	cout<<"The elements in the set are: "<<endl;
+    
+	for(auto it=myset.begin(); it != myset.end(); it++)
+    
+	{
+        
+		cout<<*it<<" ";
+    
+	}
+    
+	cout<<endl;
+    
+    
+	myset.clear();                                  //clear the set
+    
+	if(myset.empty())                               //check if set is empty or not
+    
+	{
+        
+		cout<<"Set is Empty"<<endl;
+    
+	}
+    
+	else
+    
+	{
+        
+		cout<<"Set is Non Empty"<<endl;
+    
+	}
+    
+	return 0;
+
+}
+
+
+Output:
+
+
+The size of set: 7
+Search String found
+Country Not Found
+The elements in the set are:
+India Italy Uk France Canada Japan Usa
+Set is Empty
+
+
+
+
+
+
+
+
+
+
